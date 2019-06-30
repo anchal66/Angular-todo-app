@@ -2,14 +2,19 @@
   <caption>My Todos</caption>
   <thead>
     <tr>
-      <th>Id</th>
-      <th>description</th>
+      <!-- <th>Id</th> -->
+      <th>Description</th>
+      <th>Target Date</th>
+      <th>is Completed?</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let todo of todos">
-      <td>{{todo.id}}</td>
-      <td>{{todo.desciption}}</td>
+      <!-- <td>{{todo.id}}</td> -->
+      <td>{{todo.description}}</td>
+      <td>{{todo.targetDate | date | uppercase
+        }}</td>
+      <td>{{todo.done}}</td>
     </tr>
   </tbody>
 </table>

@@ -7,10 +7,14 @@ import { HardCodedAuthenticationService } from './hard-coded-authentication.serv
 })
 export class RouteGaurdService implements CanActivate{
 
-  constructor(private hardCodedAuthenticationService:HardCodedAuthenticationService) { }
+  constructor(private hardCodedAuthenticationService:HardCodedAuthenticationService)
+   { }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot){
-    if(this.hardCodedAuthenticationService.isUserLoggedIn)
+    if(this.hardCodedAuthenticationService.isUserLoggedIn()){
+      console.log("ROute work")
       return true
+    }
+    console.log("not work")
     return false
   }
 }
